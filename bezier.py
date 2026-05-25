@@ -21,6 +21,11 @@ def get_bezier_poit_at_t(control_points, t):
         weight = binomial_coeff * ((1 - t) ** (n - i)) * (t ** i)
         curve_x += weight * px
         curve_y += weight * py
-        
-def get_calculate_bezier_curve():
-    pass
+    
+    return (curve_x, curve_y)
+
+def calculate_bezier_curve(control_points, resolution=100):
+
+    return [
+        get_bezier_poit_at_t(control_points, step / resolution) for step in range(resolution+1)
+    ]
