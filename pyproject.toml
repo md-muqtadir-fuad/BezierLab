@@ -1,0 +1,23 @@
+[project]
+name = "bezierlab"
+version = "1.0.0"
+description = "A small desktop app for creating and visualizing Bézier curves."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name" }
+]
+
+dependencies = [
+    "pillow==10.4.0"
+]
+
+[project.urls]
+Repository = "https://github.com/md-muqtadir-fuad/BezierLab"
+
+[tool.black]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

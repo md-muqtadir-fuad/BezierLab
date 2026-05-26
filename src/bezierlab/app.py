@@ -1,3 +1,5 @@
+import sys
+from pathlib import Path
 import math
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
@@ -15,6 +17,7 @@ class BezierLabApp:
     def __init__(self, root: tk.Tk):
         self.root = root
         self.root.title("BézierLab")
+        self.set_window_icon()
         self.root.geometry("1100x750")
 
         self.x_min = 0
@@ -75,6 +78,17 @@ class BezierLabApp:
 
         self.build_side_panel()
         self.bind_events()
+        
+    def set_window_icon(self) -> None:
+        if getattr(sys, "frozen", False):
+            base_path = Path(sys._MEIPASS)
+        else:
+            base_path = Path(__file__).resolve().parents[2]
+
+        icon_path = base_path / "assets" / "img" / "logo.ico"
+
+        if icon_path.exists():
+            self.root.iconbitmap(icon_path)
 
     def build_side_panel(self) -> None:
         tk.Label(
