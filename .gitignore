@@ -1,3 +1,16 @@
 .venv/
-.no_trace
+.no_trace/
+
 __pycache__/
+*.pyc
+.pytest_cache/
+
+build/
+dist/
+exe/
+*.spec
+
+# Ignore generated images, but keep project logo assets
+*.png
+!assets/img/*.png
+!assets/img/*.ico

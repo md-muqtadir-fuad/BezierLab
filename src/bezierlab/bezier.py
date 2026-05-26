@@ -1,5 +1,5 @@
 import math
-def get_bezier_poit_at_t(control_points, t):
+def get_bezier_point_at_t(control_points, t):
     '''calculates a single point on the curve for a specific t(or u); value 0-1'''
     '''
     B(t) = Σ C(n, i) × (1 - t)^(n-i) × t^i × Pᵢ
@@ -27,5 +27,5 @@ def get_bezier_poit_at_t(control_points, t):
 def calculate_bezier_curve(control_points, resolution=100):
 
     return [
-        get_bezier_poit_at_t(control_points, step / resolution) for step in range(resolution+1)
+        get_bezier_point_at_t(control_points, step / resolution) for step in range(resolution+1)
     ]
